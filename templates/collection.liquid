@@ -1,46 +1,49 @@
-<header class="page-header">
-  <h1>{{ collection.title }}</h1>
+<header id="brand-top" class="brand-wrapper">
+    <a href="/"><img src="{{ 'lewis-fredericks.png' | asset_url }}"/></a>
 </header>
 
-<!-- Display the collection description if one exists. -->
-{% unless collection.description == '' %}
-  <p class="lead">{{ collection.description }}</p>
-{% endunless %}
-
-<div class="row">
-
-  <!-- Products -->
-  <div class="col-md-9">
-    {% paginate collection.products by 12 %}
-
-    {% if collection.products.size == 0 %}
-      <div class="panel panel-default">
-        <div class="panel-body">
-          No products found in this collection.
+<main>
+    <div class="container page-padding"></div>
+    <div class="container padded">
+        <div class="row">
+            <!-- Collection Title -->
+            <div class="col-xs-12 col-md-12">
+                <h3>{{ collection.title }}</h3>
+                <!-- Display the collection description if one exists. -->
+                {% unless collection.description == '' %}
+                <p class="text-right">{{ collection.description }}</p>
+                {% endunless %}
+            </div>
         </div>
-      </div>
-    {% else %}
-      <!-- Include product list in groups of 3. -->
-      {% for product in collection.products %}
-        {% include 'product-list' with '3' %}
-      {% endfor %}
 
-      <div class="text-center">
-        {% include 'pagination' with 'product' %}
-      </div>
-    {% endif %}
+        <div class="row">
+            <!-- Products -->
+            {% if collection.products.size == 0 %}
+            <div class="col-xs-12 col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        No products found in this collection.
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <!-- Include product list in groups of 3. -->
+            {% for product in collection.products %}
+            {% include 'product-list' %}
+            {% endfor %}
+            {% endif %}
 
-    {% endpaginate %}
-  </div>
 
-  <!-- Product Tags (Desktop & Tablet) -->
-  <div class="col-md-2 col-md-offset-1 hidden-xs text-right">
-    {% include 'tag-list' with collection %}
-  </div>
+            <!-- Product Tags (Desktop & Tablet) -->
+            <div class="col-md-2 col-md-offset-1 hidden-xs text-right">
+                {% include 'tag-list' with collection %}
+            </div>
 
-  <!-- Product Tags (Phone) -->
-  <div class="col-md-2 col-md-offset-1 visible-xs text-center">
-    {% include 'tag-list' with collection %}
-  </div>
+            <!-- Product Tags (Phone) -->
+            <div class="col-md-2 col-md-offset-1 visible-xs text-center">
+                {% include 'tag-list' with collection %}
+            </div>
 
-</div>
+        </div>
+    </div>
+</main>
