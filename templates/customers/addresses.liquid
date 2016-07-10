@@ -7,7 +7,7 @@
     <div class="container padded">
 
         <!-- Available Actions -->
-        
+
         <div class="btn-group padded-bottom">
             <a class="btn" href="/account">&larr; Account Summary</a>
             <a class="btn" href="#" onclick="Shopify.CustomerAddress.toggleNewForm(); return false;">Add New Address +</a>
@@ -52,51 +52,73 @@
                         <div class="form-group">
                             <label>Your Name</label>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-6 col-xs-12">
                                     <input type="text" class="form-control" name="address[first_name]" value="{{form.first_name}}" placeholder="first name" />
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 col-xs-12">
                                     <input type="text" class="form-control" name="address[last_name]" value="{{form.last_name}}" placeholder="last name" />
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label>Company</label>
-                            <input type="text" class="form-control" name="address[company]" value="{{form.company}}" placeholder="company" />
+                        <div class="row">
+                            <div class="col-md-8 col-xs-12">
+                                <div class="form-group">
+                                    <label>Company</label>
+                                    <input type="text" class="form-control" name="address[company]" value="{{form.company}}" placeholder="company" />
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group">
                             <label>Address</label>
-                            <input type="text" class="form-control" name="address[address1]" value="{{form.address1}}" placeholder="address line 1" />
-                            <input type="text" class="form-control" name="address[address2]" value="{{form.address2}}" placeholder="address line 2" />
+                            <div class="row">
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="text" class="form-control" name="address[address1]" value="{{form.address1}}" placeholder="address line 1" />
+                                </div>
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="text" class="form-control" name="address[address2]" value="{{form.address2}}" placeholder="address line 2" />
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label>City</label>
-                            <input type="text" class="form-control" name="address[city]" value="{{form.city}}" placeholder="city" />
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="address[city]" value="{{form.city}}" placeholder="city" />
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="address[zip]" value="{{form.zip}}" placeholder="zip / postcode"/>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label>Country</label>
-                            <select id="address_country_{{address.id}}" class="form-control" name="address[country]" data-default="{{form.country}}">
-                                {{ country_option_tags }}
-                            </select>
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                                <div class="form-group">
+                                    <label>Country</label>
+                                    <select id="address_country_{{address.id}}" class="form-control" name="address[country]" data-default="{{form.country}}">
+                                        {{ country_option_tags }}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12">
+                                <div class="form-group" id="address_province_container_{{address.id}}" style="display:none;">
+                                    <label>Province</label>
+                                    <select id="address_province_{{address.id}}" class="form-control" name="address[province]" data-default="{{form.province}}"></select>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="form-group" id="address_province_container_{{address.id}}" style="display:none;">
-                            <label>Province</label>
-                            <select id="address_province_{{address.id}}" class="form-control" name="address[province]" data-default="{{form.province}}"></select>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Zip</label>
-                            <input type="text" class="form-control" name="address[zip]" value="{{form.zip}}" />
-                        </div>
-
-                        <div class="form-group">
-                            <label>Phone</label>
-                            <input type="text" class="form-control" name="address[phone]" value="{{form.phone}}" />
+                        <div class="row">
+                            <div class="col-md-8 col-xs-12">
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input type="text" class="form-control" name="address[phone]" value="{{form.phone}}" placeholder="phone"/>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="checkbox">
@@ -134,50 +156,72 @@
                             <label>Your Name</label>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" name="address[first_name]" value="{{form.first_name}}" placeholder="First" />
+                                    <input type="text" class="form-control" name="address[first_name]" value="{{form.first_name}}" placeholder="first name" />
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" name="address[last_name]" value="{{form.last_name}}" placeholder="Last" />
+                                    <input type="text" class="form-control" name="address[last_name]" value="{{form.last_name}}" placeholder="last name" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-8 col-xs-12">
+                                <div class="form-group">
+                                    <label>Company</label>
+                                    <input type="text" class="form-control" name="address[company]" value="{{form.company}}" placeholder="company" />
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label>Company</label>
-                            <input type="text" class="form-control" name="address[company]" value="{{form.company}}" placeholder="" />
-                        </div>
-
-                        <div class="form-group">
                             <label>Address</label>
-                            <input type="text" class="form-control" name="address[address1]" value="{{form.address1}}" placeholder="" />
-                            <input type="text" class="form-control" name="address[address2]" value="{{form.address2}}" placeholder="" />
+                            <div class="row">
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="text" class="form-control" name="address[address1]" value="{{form.address1}}" placeholder="address line 1" />
+                                </div>
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="text" class="form-control" name="address[address2]" value="{{form.address2}}" placeholder="address line 2" />
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label>City</label>
-                            <input type="text" class="form-control" name="address[city]" value="{{form.city}}" placeholder="" />
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="address[city]" value="{{form.city}}" placeholder="city" />
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="address[zip]" value="{{form.zip}}" placeholder="zip / postcode" />
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="form-group">
-                            <label>Country</label>
-                            <select id="address_country_new" class="form-control" name="address[country]" data-default="{{form.country}}">
+                        
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                                <div class="form-group">
+                                    <label>Country</label>
+                                    <select id="address_country_new" class="form-control" name="address[country]" data-default="{{form.country}}">
                                 {{ country_option_tags }}
-                            </select>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12">
+                                <div class="form-group" id="address_province_container_new" style="display:none;">
+                                    <label>Province</label>
+                                    <select id="address_province_new" class="form-control" name="address[province]" data-default="{{form.province}}"></select>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="form-group" id="address_province_container_new" style="display:none;">
-                            <label>Province</label>
-                            <select id="address_province_new" class="form-control" name="address[province]" data-default="{{form.province}}"></select>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Zip</label>
-                            <input type="text" class="form-control" name="address[zip]" value="{{form.zip}}" />
-                        </div>
-
-                        <div class="form-group">
-                            <label>Phone</label>
-                            <input type="text" class="form-control" name="address[phone]" value="{{form.phone}}" />
+                        <div class="row">
+                            <div class="col-md-8 col-xs-12">
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input type="text" class="form-control" name="address[phone]" value="{{form.phone}}" />
+                                </div>
+                            </div>
                         </div>
 
                         <div class="checkbox">

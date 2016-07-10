@@ -504,7 +504,7 @@ section.content {
 /* FORMS */
 
 form {
-    
+
 }
 
 input[type="text"], input[type="email"], input[type="password"], textarea {
@@ -523,7 +523,17 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
     font-size: 14px !important;
 }
 
-input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus {
+select.form-control {
+    border: 0px;
+    border-bottom: 2px solid #454545;
+    /*-webkit-appearance: none;*/
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus, select.form-control:focus {
     border-color: #454545;
     -moz-box-shadow: none;
     box-shadow: none;
