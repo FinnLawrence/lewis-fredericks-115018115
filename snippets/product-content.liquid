@@ -1,0 +1,24 @@
+<div id="{{ title | handleize }}-{{ subtitle | handleize }}" class="product" itemscope itemtype="http://schema.org/Product">
+    <div class="images">
+        <img  src="{{ product.featured_image | product_img_url: "medium" }}"/>
+        <img class="high-res" src="{{ product.featured_image | product_img_url: "master" }}"/>
+    </div>
+    <div class="description">
+        <div class="row">
+            <div class="col-xs-12 col-md-4">
+                <h4 class="modal-title product-title" id="modal-{{ title | handleize }}-{{ subtitle | handleize }}-label">{{ title }}</h4>
+                <p class="product-subtitle">{{ subtitle }}</p>
+            </div>
+            <div class="col-xs-12 col-md-8">
+                <div class="btn-wrapper clearfix">
+                    <p class="price">${{ product.price | money_without_currency }}</p>
+                    <a class="btn btn-default btn-add-to-cart" data-id="{{ product.variants[0].id }}">Add to Cart</a>
+                </div>
+                <div class="btn-wrapper clearfix">
+                    <a href="/cart" class="btn btn-default btn-check-out">Check Out</a>
+                </div>
+                <div class="description">{{ product.description }}</div>
+            </div>
+        </div>
+    </div>
+</div>
