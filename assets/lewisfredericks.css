@@ -708,6 +708,7 @@ body.modal-backdrop-blue .modal-backdrop.in {
 .product .images .high-res {
     position: absolute;
     top: 10vh;
+    left: 0px;
 }
 
 .product .images img {
