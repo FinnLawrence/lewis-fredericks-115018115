@@ -316,7 +316,6 @@
         </section>
     </div>
 </main>
-<footer></footer>
 
 {% for product in collections.all.products %}
 {% assign titles = product.title | split: '-' %}
@@ -342,19 +341,55 @@
 {% form 'contact' %}
 
 {% if form.posted_successfully? %}
-<div class="successForm feedback">
-    {{ 'contact.form.post_success' | t }}
+<div class="modal fade modal-centre" id="modal-success" tabindex="-1" role="dialog" aria-labelledby="modal-success-label">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="modal-success-label">Message Received</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12 text-center">
+                        <p>Thanks for getting in touch.</p>
+                        <p>We'll respond to your enquiry shortly.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
 {% endif %}
 
 {% if form.errors %}
-<div class="errorForm feedback">
-    <p>Your contact form has {{ form.errors | size | pluralize: ‘an error’, ‘a few errors’ }}. To submit your form, make the following changes and try again:</p>
-    {% for field in form.errors %}
-    <p>The {{ field | capitalize | replace: 'Body', 'Message' }} field {{ form.errors.messages[field] }}.</p>
-    {% endfor %}
+<div class="modal fade modal-centre" id="modal-failure" tabindex="-1" role="dialog" aria-labelledby="modal-failure-label">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="modal-failure-label">Contact Form Errors</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12 text-center">
+                        <p>Your contact form has errors. To submit your form, make the following changes and try again:</p>
+                        {% for field in form.errors %}
+                        <p>The {{ field | capitalize | replace: 'Body', 'Message' }} field {{ form.errors.messages[field] }}.</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
 {% endif %}
+
 <div class="modal fade modal-centre" id="modal-contact" tabindex="-1" role="dialog" aria-labelledby="modal-contact-label">
     <div id="contactFormWrapper" class="modal-dialog" role="document">
         <div class="modal-content">
@@ -364,14 +399,25 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-
+                    <div class="col-md-6 col-xs-12">
+                        <div class="form-group">
+                            <select required id="contactFormSubject" class="form-control placeholder"  name="contact[subject]">
+                                <option value="" disabled selected hidden>what are you getting in touch about?</option>
+                                <option value="Online Store">- online store</option>
+                                <option value="Purchasing Eyewear">- purchasing eyewear</option>
+                                <option value="Wholesale enquiry">- wholesale enquiry</option>
+                                <option value="Bespoke Eyewear">- bespoke eyewear</option>
+                                <option value="Press">- press</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 col-xs-12">
-                        <input type="text" required id="contactFormName" placeholder="name" name="contact[name]">
+                        <input class="form-control" type="text" required id="contactFormName" placeholder="name" name="contact[name]">
                     </div>
                     <div class="col-md-6 col-xs-12">
-                        <input type="email" required id="contactFormEmail" placeholder="email address" name="contact[email]">
+                        <input class="form-control" type="email" required id="contactFormEmail" placeholder="email address" name="contact[email]">
                     </div>
                     <div class="col-md-12">
                         <textarea required id="contactFormMessage" placeholder="leave your message here..." name="contact[body]"></textarea>

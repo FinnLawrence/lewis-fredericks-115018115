@@ -40,7 +40,12 @@ $(document).ready(function() {
 
     $('#navigation a').click(function() {
         $('#navigation').removeClass("expanded");
-    })
+    });
+});
+
+$(window).load(function() {
+    $('#modal-success').modal('show');
+    $('#modal-failure').modal('show');
 });
 
 function addToCart(button) {
@@ -72,12 +77,13 @@ function addToCart(button) {
             var label = response.message;
             var description = response.description;
             if (status == 422) {
-                $('#modal-error-status').text("Available stock allocated.");
+                $('#modal-alert-status').text("Available stock allocated.");
+            } else {
+                $('#modal-alert-status').text("");
             }
-            $('#modal-error-label').text(label);
-            $('#modal-error-description').text(description);
-            $('#modal-error').modal('show');
-            console.log(response);
+            $('#modal-alert-label').text(label);
+            $('#modal-alert-description').text(description);
+            $('#modal-alert').modal('show');
         }
     });
 }

@@ -590,6 +590,10 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
     font-size: 14px !important;
 }
 
+textarea {
+    padding: 6px 12px;
+}
+
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0px 1000px #fefefe inset !important;
     background-color: #fefefe !important;
@@ -598,11 +602,37 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 select.form-control {
     border: 0px;
     border-bottom: 2px solid #454545;
-    /*-webkit-appearance: none;*/
+    -webkit-appearance: none;
     -webkit-border-radius: 0px;
     border-radius: 0px;
     -moz-box-shadow: none;
     box-shadow: none;
+    margin-bottom: 28px;
+    background-image: url(http://i.imgur.com/233R409.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right center;
+}
+
+select:invalid {
+    color: #999999;
+    background-image: url(http://i.imgur.com/LeeKo3h.png);
+}
+
+::-webkit-input-placeholder {
+   color: #999999;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #999999;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #999999;  
+}
+
+:-ms-input-placeholder {  
+   color: #999999;  
 }
 
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus, select.form-control:focus {
@@ -776,10 +806,6 @@ body.modal-backdrop-blue .modal-backdrop.in {
 .modal-shop .modal-content .modal-body {
     padding: 0px;
     border-bottom: 0px;
-}
-
-#modal-error p {
-    text-align: center;
 }
 
 .product {
