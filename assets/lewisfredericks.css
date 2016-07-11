@@ -316,6 +316,22 @@ section.content {
     float: right;
 }
 
+.back-order {
+    display: inline-block;
+    float: right;
+}
+
+.back-order .btn {
+    float: none;
+}
+
+.back-order p {
+    text-transform: uppercase;
+    padding: 0px 10px;
+    margin: 0px 0px;
+    line-height: 40px;
+}
+
 /* SHOP */
 
 .product-wrapper {

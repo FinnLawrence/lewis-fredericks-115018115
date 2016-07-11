@@ -15,8 +15,7 @@
                     {% if product.available %}
                     <a class="btn btn-default btn-add-to-cart" data-id="{{ product.variants[0].id }}">Add to Cart</a>
                     {% else %}
-                    <p>Out of stock</p>
-                    <a class="btn btn-default btn-add-to-cart" data-id="{{ product.variants[0].id }}">Back order</a>
+                    <div class="back-order"><p>Sold out</p><a class="btn btn-default btn-back-order BIS_trigger" data-id="{{ product.variants[0].id }}" data-product-handle="{{ product.handle }}">Back order</a></div>
                     {% endif %}
                 </div>
                 <div class="btn-wrapper clearfix">
