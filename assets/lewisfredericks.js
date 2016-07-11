@@ -31,9 +31,7 @@ $(document).ready(function() {
     });
 
     $('.btn-add-to-cart').click(function() {
-        addToCart($(this).data("id"));
-        var id = $(this).closest('.product').attr("id");
-        $('#' + id + ' .btn-check-out').addClass("visible");
+        addToCart($(this));
     });
 
     $('.navbar-toggle').click(function() {
@@ -45,17 +43,41 @@ $(document).ready(function() {
     })
 });
 
-function addToCart(id) {
+function addToCart(button) {
+    var productID = button.data("id");
+    var wrapperID = button.closest('.product').attr("id");
+    var modalID = button.closest('.modal-shop').attr("id");
+    console.log(modalID);
+    
     jQuery.ajax({
         url: '/cart/add.js',
         dataType: 'json',
         data: {
             quantity: 1,
-            id: id
+            id: productID
         },
         method: "POST",
         success: function(data, textStatus, jqXHR) {
             updateCart();
+            // Make the check out button visible
+            $('#' + wrapperID + ' .btn-check-out').addClass("visible");
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            // Close the modal if we're in one
+            if(modalID) {
+                $('#' + modalID).modal('hide');
+            }
+            var response = JSON.parse(jqXHR.responseText);
+            var status = response.status;
+            var label = response.message;
+            var description = response.description;
+            if (status == 422) {
+                $('#modal-error-status').text("Available stock allocated.");
+            }
+            $('#modal-error-label').text(label);
+            $('#modal-error-description').text(description);
+            $('#modal-error').modal('show');
+            console.log(response);
         }
     });
 }

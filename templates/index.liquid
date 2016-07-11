@@ -145,6 +145,10 @@
                                     <div class="product-image" style="background-image: url('{{ product.featured_image | product_img_url: "medium" }}');">
                                     </div>
                                     <div class="product-image-hover"></div>
+                                    {% if product.available %}
+                                    {% else %}
+                                    <p class="out-of-stock">Sold out</p>
+                                    {% endif %}
                                 </div>
                             </a>
                             <div class="product-description-wrapper">
@@ -170,9 +174,9 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-7 col-xs-offset-5 col-md-7 col-md-offset-5">
-                        <h3>Sustainable</h3>
+                        <h3 class="heading">Sustainable</h3>
                         <p>Horn is a totally sustainable and natural material. The fibre of horn carries with it properties that outweigh any synthetic counterpart. Lightweight and durable, each pair will gracefully flex and gradually mould to the contours of the wearer’s face.</p>
-                        <h3>1/1</h3>
+                        <h3 class="heading">1/1</h3>
                         <p>Horn is a natural fibre; its integrity, pattern and structure cannot be replicated, making each individual pair of Lewis Fredericks a completely unique, one of a kind piece.</p>
                     </div>
                 </div>
@@ -187,9 +191,9 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-7 col-xs-offset-5 col-md-7 col-md-offset-5">
-                        <h3>Handmade</h3>
+                        <h3 class="heading">Handmade</h3>
                         <p>With mass production and little technique now a calling card of the eyewear industry, Lewis Fredericks instead pays tribute to the rich history of eyewear’s past, through recycling the traditionally used material of horn, polarised lenses and expert hand craftsmanship.</p>
-                        <h3>Ethical</h3>
+                        <h3 class="heading">Ethical</h3>
                         <p>Lewis Fredericks Eyewear offers time-honoured silhouettes fashioned from waste horn, the previously discarded by-product of domesticated Buffalo, Ox and Ram.</p>
                     </div>
                 </div>
@@ -205,16 +209,107 @@
             </div>
         </section>
         <section id="stockists" class="content">
-            <div class="container">
+            <div class="container padded">
                 <div class="row">
-                    <div class="col-xs-12 col-md-4">
-                        <h3>Auckland</h3>
+                    <div class="col-xs-7 col-xs-offset-5 col-md-7 col-md-offset-5">
+                        <h3 class="heading">Auckland</h3>
+                        <div class="stockist">
+                            <h4>Fabric | Downtown</h4>
+                            <a target="_blank" href="http://www.thisisfabric.com/"><p>thisisfabric.com</p></a>
+                            <a target="_blank" href="tel:+64 9 366 4528"><p>+64 9 366 4528</p></a>
+                            <div class="stockist-address">
+                                <p>5 High Street</p>
+                                <p>Downtown</p>
+                                <p>Auckland</p>
+                                <p>New Zealand</p>
+                            </div>
+                        </div>
+                        <div class="stockist">
+                            <h4>Fabric | Newmarket</h4>
+                            <a target="_blank" href="http://www.thisisfabric.com/"><p>thisisfabric.com</p></a>
+                            <a target="_blank" href="tel:+64 9 529 1890"><p>+64 9 529 1890</p></a>
+                            <div class="stockist-address">
+                                <p>6B Teed Street</p>
+                                <p>Newmarket</p>
+                                <p>Auckland</p>
+                                <p>New Zealand</p>
+                            </div>
+                        </div>
+                        <div class="stockist">
+                            <h4>Scotties</h4>
+                            <a target="_blank" href="http://www.scottiesboutique.co.nz/"><p>scottiesboutique.co.nz</p></a>
+                            <a target="_blank" href="tel:+64 9 379 6617"><p>+64 9 379 6617</p></a>
+                            <div class="stockist-address">
+                                <p>2 Blake St</p>
+                                <p>Ponsonby</p>
+                                <p>Auckland</p>
+                                <p>New Zealand</p>
+                            </div>
+                        </div>
+                        <div class="stockist">
+                            <h4>Gates Eyewear</h4>
+                            <a target="_blank" href="http://gateseyewear.co.nz/"><p>gateseyewear.co.nz</p></a>
+                            <a target="_blank" href="tel:+64 9 524 4962"><p>+64 9 524 4962</p></a>
+                            <div class="stockist-address">
+                                <p>17a Remuera Road</p>
+                                <p>Newmarket</p>
+                                <p>Auckland</p>
+                                <p>New Zealand</p>
+                            </div>
+                        </div>
+                        <div class="stockist">
+                            <h4>Fabric | Newmarket</h4>
+                            <a target="_blank" href="http://www.gracelang.co.nz/"><p>gracelang.co.nz</p></a>
+                            <a target="_blank" href="tel:+64 9 376 2474"><p>+64 9 376 2474</p></a>
+                            <div class="stockist-address">
+                                <p>282 Ponsonby Road</p>
+                                <p>Ponsonby</p>
+                                <p>Auckland</p>
+                                <p>New Zealand</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-xs-12 col-md-4">
-                        <h3>Wellington</h3>
+                </div>
+                <div class="row">
+                    <div class="col-xs-7 col-xs-offset-5 col-md-7 col-md-offset-5">
+                        <h3 class="heading">Wellington</h3>
+                        <div class="stockist">
+                            <h4>Scotties</h4>
+                            <a target="_blank" href="http://www.scottiesboutique.co.nz/"><p>scottiesboutique.co.nz</p></a>
+                            <a target="_blank" href="tel:+64 4 384 3805"><p>+64 4 384 3805</p></a>
+                            <div class="stockist-address">
+                                <p>4 Blair Street</p>
+                                <p>Te Aro</p>
+                                <p>Wellington</p>
+                                <p>New Zealand</p>
+                            </div>
+                        </div>
+                        <div class="stockist">
+                            <h4>Woodward Optical</h4>
+                            <a target="_blank" href="http://www.woodwardoptical.co.nz/"><p>woodwardoptical.co.nz</p></a>
+                            <a target="_blank" href="tel:+64 4 472 3067"><p>+64 4 472 3067</p></a>
+                            <div class="stockist-address">
+                                <p>5 Woodward Street</p>
+                                <p>Wellington Central</p>
+                                <p>Wellington</p>
+                                <p>New Zealand</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-xs-12 col-md-4">
-                        <h3>Sydney</h3>
+                </div>
+                <div class="row">
+                    <div class="col-xs-7 col-xs-offset-5 col-md-7 col-md-offset-5">
+                        <h3 class="heading">Wanaka</h3>
+                        <div class="stockist">
+                            <h4>Eyes on Ardmore</h4>
+                            <a target="_blank" href="http://www.eyesonardmore.co.nz"><p>eyesonardmore.co.nz</p></a>
+                            <a target="_blank" href="tel:+64 3 443 5103"><p>+64 3 443 5103</p></a>
+                            <div class="stockist-address">
+                                <p>80 Ardmore Street</p>
+                                <p>Wanaka</p>
+                                <p>New Zealand</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -260,7 +355,7 @@
     {% endfor %}
 </div>
 {% endif %}
-<div class="modal fade" id="modal-contact" tabindex="-1" role="dialog" aria-labelledby="modal-contact-label">
+<div class="modal fade modal-centre" id="modal-contact" tabindex="-1" role="dialog" aria-labelledby="modal-contact-label">
     <div id="contactFormWrapper" class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

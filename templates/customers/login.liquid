@@ -57,9 +57,9 @@
                     <!-- Continue as Guest Button (if permitted) -->
                     {% if shop.checkout.guest_login %}
                     {% form 'guest_login' %}
-                    <span class="help-block text-center">or</span>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-info btn-lg btn-block">Continue as Guest</button>
+                    <span class="help-block text-right">or</span>
+                    <div class="form-group text-right">
+                        <button type="submit" class="btn btn-info btn-lg">Continue as Guest</button>
                     </div>
                     {% endform %}
                     {% endif %}

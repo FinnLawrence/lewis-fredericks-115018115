@@ -12,7 +12,11 @@
             <div class="col-xs-12 col-md-8">
                 <div class="btn-wrapper clearfix">
                     <p class="price">${{ product.price | money_without_currency }}</p>
+                    {% if product.available %}
                     <a class="btn btn-default btn-add-to-cart" data-id="{{ product.variants[0].id }}">Add to Cart</a>
+                    {% else %}
+                    <a class="btn btn-default disabled" data-id="{{ product.variants[0].id }}">Sold out</a>
+                    {% endif %}
                 </div>
                 <div class="btn-wrapper clearfix">
                     <a href="/cart" class="btn btn-default btn-check-out">Check Out</a>
