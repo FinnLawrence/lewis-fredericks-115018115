@@ -11,7 +11,7 @@
             </button>
             <ul>
                 <li><a class="anchor" href="#top">Home</a></li>
-                <li class="hide-on-mobile"><a class="anchor" href="#campaign">Campaign</a></li>
+                <li><a class="anchor" href="#campaign">Campaign</a></li>
                 <li><a class="anchor" href="#store">Shop</a></li>
                 <li><a class="anchor" href="#about">About</a></li>
                 <li><a class="anchor" href="#stockists">Stockists</a></li>
@@ -32,23 +32,24 @@
     </nav>
 </header>
 <main id="top">
-    <section id="hero-light" class="fullscreen hide-on-mobile">
+    <section id="hero-mobile" class="fullscreen">
         <div class="center-image">
-            <div class="image image-version-two">
+            <div class="image">
                 <img class="placeholder" src="{{ 'hero-light-1.jpg' | asset_url }}" onload="setAsBackground(this);"/>
             </div>
-            <div class="image image-version-one">
-                <img class="placeholder" src="{{ 'hero-light-2.jpg' | asset_url }}" onload="setAsBackground(this);"/>
+        </div>
+    </section>
+    <section id="hero-light" class="fullscreen hide-on-mobile">
+        <div class="center-image">
+            <div class="image">
+                <img class="placeholder" src="{{ 'hero-light-1.jpg' | asset_url }}" onload="setAsBackground(this);"/>
             </div>
         </div>
     </section>
     <section id="hero-dark" class="fullscreen hide-on-mobile">
         <div class="center-image">
-            <div class="image image-version-two">
+            <div class="image">
                 <img class="placeholder" src="{{ 'hero-dark-1.jpg' | asset_url }}" onload="setAsBackground(this);"/>
-            </div>
-            <div class="image image-version-one">
-                <img class="placeholder" src="{{ 'hero-dark-2.jpg' | asset_url }}" onload="setAsBackground(this);"/>
             </div>
         </div>
     </section>
@@ -64,10 +65,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-md-12">
                         <div class="image-wrapper landscape fadein">
-                            <div class="image image-version-one">
-                                <img class="placeholder " src="{{ 'campaign-1-m.png' | asset_url }}" onload="setAsBackground(this);"/>
-                            </div>
-                            <div class="image image-version-two">
+                            <div class="image">
                                 <img class="placeholder " src="{{ 'campaign-1-f.png' | asset_url }}" onload="setAsBackground(this);"/>
                             </div>
                         </div>

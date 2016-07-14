@@ -1,5 +1,5 @@
 html, body {
-    background-color: #fefefe;
+    background-color: #f9f9f9;
     -ms-overflow-style: none;
     font-family: 'national-regular', sans-serif;
 }
@@ -41,7 +41,7 @@ main {
     width: calc(8vw - 4px);
     height: 28px;
     padding: 1vw 1.5vw;
-    background-color: #fefefe;
+    background-color: #f9f9f9;
 }
 
 .navbar-toggle .icon-bar {
@@ -86,11 +86,12 @@ main {
 }
 
 .nav-wrapper ul li a:hover {
-    padding-left: 5px;
+    /*padding-left: 5px;*/
+    font-weight: bold;
 }
 
 .nav-wrapper ul li a.active {
-    padding-left: 5px;
+    /*padding-left: 5px;*/
     font-weight: bold;
 }
 
@@ -168,15 +169,11 @@ main {
     left: 25vw;
 }
 
-#hero-light .center-image {
+#hero-light .center-image, #hero-mobile .center-image {
     z-index: 20;
 }
 
-#hero-light .center-image .image-version-one {
-    background-position: 50% 10%;
-}
-
-#hero-light .center-image .image-version-two {
+#hero-light .center-image, #hero-mobile .center-image {
     background-position: 55% 20%;
 }
 
@@ -190,12 +187,16 @@ main {
     z-index: 10;
 }
 
-#hero-dark .center-image .image-version-one {
-    background-position: 50% 10%;
+#hero-dark .center-image {
+    background-position: 80% 15%;
 }
 
-#hero-dark .center-image .image-version-two {
-    background-position: 80% 15%;
+#hero-mobile {
+    display: none;
+}
+
+#hero-mobile .center-image {
+    top: 35vh;
 }
 
 /* CONTENT STYLES */
@@ -261,7 +262,7 @@ div.padded-bottom {
 }
 
 .table-striped thead, .table-striped tfoot {
-    background-color: #fefefe;
+    background-color: #f9f9f9;
 }
 
 img.placeholder {
@@ -295,11 +296,11 @@ section.content {
 }
 
 .container.padded {
-    margin-bottom: 50px;
+    padding-bottom: 50px;
 }
 
 #content {
-    background-color: #fefefe;
+    background-color: #f9f9f9;
     position: relative;
     z-index: 40;
 }
@@ -457,7 +458,7 @@ section.content {
 
 .stockist {
     padding: 5px 0px;
-    background-color: #fefefe;
+    background-color: #f9f9f9;
 }
 
 .stockist h4 {
@@ -604,6 +605,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
     padding-bottom: 5px;
     outline: none;
     font-size: 14px !important;
+    background-color: #f9f9f9;
 }
 
 textarea {
@@ -611,8 +613,12 @@ textarea {
 }
 
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0px 1000px #fefefe inset !important;
-    background-color: #fefefe !important;
+    -webkit-box-shadow: 0 0 0px 1000px #f9f9f9 inset !important;
+    background-color: #f9f9f9 !important;
+}
+
+.form-control {
+    background-color: #f9f9f9;
 }
 
 select.form-control {
@@ -666,7 +672,7 @@ textarea {
 }
 
 .btn {
-    background-color: #fefefe;
+    background-color: #f9f9f9;
     border: 2px solid #454545;
     color: #454545;
     border-radius: 0px;
@@ -689,18 +695,18 @@ textarea {
 
 .btn-primary {
     background-color: #454545;
-    color: #fefefe;
+    color: #f9f9f9;
 }
 
 .btn.focus, .btn:focus, .btn:hover {
     outline: none;
     background-color: #454545;
     border-color: #454545;
-    color: #fefefe;
+    color: #f9f9f9;
 }
 
 .btn-primary.focus, .btn-primary:focus, .btn-primary:hover {
-    background-color: #fefefe;
+    background-color: #f9f9f9;
     color: #454545;
 }
 
@@ -752,7 +758,7 @@ body.modal-backdrop-blue .modal-backdrop.in {
     border-radius: 0px;
     -webkit-box-shadow: none;
     box-shadow: none;
-    background-color: #fefefe;
+    background-color: #f9f9f9;
 }
 
 .modal-content .close {
@@ -806,7 +812,7 @@ body.modal-backdrop-blue .modal-backdrop.in {
 .modal-shop .modal-dialog {
     margin: 0px auto;
     padding: 0px;
-    background-color: #fefefe;
+    background-color: #f9f9f9;
 }
 
 .modal-shop .modal-dialog .modal-content {
@@ -825,7 +831,7 @@ body.modal-backdrop-blue .modal-backdrop.in {
 }
 
 .product {
-    background-color: #fefefe;
+    background-color: #f9f9f9;
 }
 
 .product .images {
@@ -879,6 +885,11 @@ body.modal-backdrop-blue .modal-backdrop.in {
 }
 
 @media (max-width: 600px) {
+    
+    #hero-mobile {
+        display: block;
+    }
+    
     .container {
         width: -moz-calc(70vw + 30px);
         width: -webkit-calc(70vw + 30px);
@@ -893,6 +904,7 @@ body.modal-backdrop-blue .modal-backdrop.in {
 
     #brand-top.brand-wrapper {
         left: 5vw;
+        width: 70vw;
     }
 
     .hide-on-mobile {
@@ -928,7 +940,7 @@ body.modal-backdrop-blue .modal-backdrop.in {
         height: auto;
         max-height: 400px;
         min-height: 100px;
-        background-color: #fefefe;
+        background-color: #f9f9f9;
     }
 
     .nav-wrapper .icon-bar {

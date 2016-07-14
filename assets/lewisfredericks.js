@@ -14,7 +14,7 @@ $(document).ready(function() {
         } else {
             var current = $(window).scrollTop();
             var target = $( $.attr(this, 'href') ).offset().top;
-            var duration = Math.abs(target - current);
+            var duration = Math.abs(target - current) / 1.5;
             $('html, body').animate({
                 scrollTop: target
             }, duration);
