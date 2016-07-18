@@ -4,33 +4,12 @@
 
 {% endcomment %}
 <footer class="footer">
-  <div class="container">
-
-    <!-- Social Media Icons -->
-    <ul class="footer-links">
-      {% include 'footer-social' %}
-    </ul>
-
-    <!-- Payment Methods -->
-    <ul class="footer-links">
-      {% include 'footer-pay' %}
-    </ul>
+  <div class="container full-width">
 
     <!-- Footer Links -->
-    <ul class="footer-links">
-      {% for link in linklists.footer.links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-        {% unless forloop.last %}
-        <li class="muted">&middot;</li>
-        {% endunless %}
-      {% endfor %}
-    </ul>
-
-    <!-- Required Shopify Link & Logout Link -->
-    <small>
-      {{ powered_by_link }}
-      {% if customer %}&middot; Logged in as <strong>{{ customer.name }}</strong> ({{ 'Logout' | customer_logout_link }}){% endif %}
-    </small>
+    <div class="footer-links">
+        <p>Copyright &copy; 2016 | <a>Terms and Conditions</a> | <a target="_blank" href="/pages/consumer-data-privacy-policy">Privacy Policy</a></p>
+    </div>
 
   </div>
 </footer>

@@ -1,5 +1,10 @@
-<header class="page-header">
-  <h1>{{ page.title }}</h1>
+<header id="brand-top" class="brand-wrapper">
+    <a href="/"><img src="{{ 'lewis-fredericks-2.png' | asset_url }}"/></a>
 </header>
 
-{{ page.content }}
+<main>
+    <div class="container page-padding"></div>
+    <div class="container padded">
+        {{ page.content }}
+    </div>
+</main>

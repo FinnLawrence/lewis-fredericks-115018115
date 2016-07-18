@@ -4,6 +4,7 @@ $(document).ready(function() {
         clipLogo();
         highlightNav();
         pushBrand();
+        colorAbout();
     }
     updateCart();
 
@@ -110,6 +111,7 @@ $(window).scroll(function() {
         clipLogo();
         highlightNav();
         pushBrand();
+        colorAbout();
     }
 });
 
@@ -119,6 +121,7 @@ $(window).resize(function() {
         clipLogo();
         highlightNav();
         pushBrand();
+        colorAbout();
     }
 });
 
@@ -182,6 +185,17 @@ function highlightNav() {
         }
     }
 
+}
+
+function colorAbout() {
+    var top = $('#brand-top').offset().top;
+    var aboutTop = $('#about').offset().top;
+    var aboutBottom = $('#about').height() + aboutTop;
+    if (top > aboutTop && top < aboutBottom) {
+        $('#content').addClass("lilac");
+    } else {
+        $('#content').removeClass("lilac");
+    }
 }
 
 function pushBrand() {
