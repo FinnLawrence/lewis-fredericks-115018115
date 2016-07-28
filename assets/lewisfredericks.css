@@ -608,6 +608,8 @@ section.content {
     background-color: #f9f9f9;
     border-top: 0px;
     padding: 15px 0;
+    position: relative;
+    z-index: 50;
 }
 
 .footer p {
