@@ -9,19 +9,19 @@ $(document).ready(function() {
     updateCart();
 
     // SMOOTH SCROLL
-    $('a[href^=#]').click(function(){
-        if ($.attr(this, 'href') === "#") {
-            return true; // Allows the tabbed panes to work
-        } else {
-            var current = $(window).scrollTop();
-            var target = $( $.attr(this, 'href') ).offset().top;
-            var duration = Math.abs(target - current) / 1.5;
-            $('html, body').animate({
-                scrollTop: target
-            }, duration);
-            return false;
-        }
-    });
+    //$('a[href^=#]').click(function(){
+    //    if ($.attr(this, 'href') === "#") {
+    //        return true; // Allows the tabbed panes to work
+    //   } else {
+    //        var current = $(window).scrollTop();
+    //        var target = $( $.attr(this, 'href') ).offset().top;
+    //        var duration = Math.abs(target - current) / 1.5;
+    //        $('html, body').animate({
+    //            scrollTop: target
+    //        }, duration);
+    //        return false;
+    //    }
+    //});
 
     $('#modal-contact').on('show.bs.modal', function () {
         $('body').addClass('modal-backdrop-blue');
